@@ -6,7 +6,7 @@ module Pages
 
         def initialize
             @fixture  =  TestData.get_fixtures("vote")
-            @url      =  "http://192.168.99.100:5000/"
+            @url      =  "http://139.59.94.120:5000/"
             @params   =  {"vote":  @fixture["choice"]}
             @headers  =  {"content_type": "application/x-www-form-urlencoded"}
 

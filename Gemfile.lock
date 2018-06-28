@@ -113,7 +113,9 @@ GEM
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     public_suffix (2.0.4)
-    rack (2.0.1)
+    rack (1.6.10)
+    rack-protection (1.5.5)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rainbow (2.1.0)
@@ -159,6 +161,13 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
+    sinatra (1.4.8)
+      rack (~> 1.5)
+      rack-protection (~> 1.4)
+      tilt (>= 1.3, < 3)
+    sinatra-cross_origin (0.4.0)
+    sinatra-swagger-exposer (0.3.0)
+      sinatra (~> 1.4)
     site_prism (2.9)
       addressable (>= 2.3.3, < 3.0)
       capybara (>= 2.1, < 3.0)
@@ -169,6 +178,7 @@ GEM
       power_assert
     thor (0.19.1)
     thread_safe (0.3.5)
+    tilt (2.0.8)
     tomlrb (1.2.3)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -184,6 +194,10 @@ GEM
     xpath (2.0.0)
       nokogiri (~> 1.3)
     yard (0.9.5)
+    yard-cucumber (4.0.0)
+      cucumber (>= 2.0, < 4.0)
+      gherkin (>= 4.0, < 6.0)
+      yard (~> 0.8, >= 0.8.1)
 
 PLATFORMS
   ruby
@@ -222,10 +236,14 @@ DEPENDENCIES
   rubocop
   rubocop-checkstyle_formatter
   selenium-webdriver
+  sinatra
+  sinatra-cross_origin
+  sinatra-swagger-exposer
   site_prism
   test-unit
   wannabe_bool
   yard
+  yard-cucumber
 
 BUNDLED WITH
-   1.12.5
+   1.16.2

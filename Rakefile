@@ -8,7 +8,7 @@ require 'fileutils'
 
 Cucumber::Rake::Task.new(:api) do |t|
   t.cucumber_opts = " -x APP=api
-                      SERVER=http://192.168.99.100:5000/
+                      SERVER=http://139.59.94.120:5000/
                       features -p api "
 end
 
@@ -16,7 +16,7 @@ Cucumber::Rake::Task.new(:web) do |t|
   t.cucumber_opts = " DRIVER=poltergeist
                       APP=web
                       DEBUG=false
-                      SERVER=http://192.168.99.100:5000/
+                      SERVER=http://139.59.94.120:5000/
                       features -p web "
 end
 
@@ -24,7 +24,7 @@ Cucumber::Rake::Task.new(:webapp) do |t|
   t.cucumber_opts = " DRIVER=firefox
                       APP=web
                       DEBUG=false
-                      SERVER=http://192.168.99.100:5000/
+                      SERVER=http://139.59.94.120:5000/
                       features -p web "
 end
 
@@ -32,7 +32,7 @@ Cucumber::Rake::Task.new(:webapps) do |t|
   t.cucumber_opts = " DRIVER=selenium
                       APP=web
                       DEBUG=false
-                      SERVER=http://192.168.99.100:5000/
+                      SERVER=http://139.59.94.120:5000/
                       features -p web "
 end
 
@@ -40,7 +40,7 @@ Cucumber::Rake::Task.new(:android) do |t|
   t.cucumber_opts = " DRIVER=appium
                       APP=native
                       OS=android
-                      SERVER=http://192.168.99.100:5000
+                      SERVER=http://139.59.94.120:5000
                       features -p android "
 end
 
@@ -71,6 +71,10 @@ end
 task :stop_appium do
 end
 
+task :task do
+    puts "hello"
+end
+
 task :androidapp ,[:appname,:variant,:tag]  do |t, args|
   sh  "./scripts/run_appium.sh"
   sh  "./scripts/fetch_builds.sh #{args[:appname]} #{args[:variant]}"
@@ -80,5 +84,6 @@ end
 YARD::Rake::YardocTask.new(:yard) do |t|
 #t.files   = ['features/**/*.feature', 'features/**/*.rb']
 end
+
 
 #task :default => [:web]
